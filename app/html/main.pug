@@ -1,0 +1,93 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
++header()
+
+.main-banner(style="background-image:url('img/img-19.jpg')")
+	//.main-banner-filter
+	.main-banner-content
+		.main-cont
+			.main-banner-wrap
+				.main-banner-title Клуб
+				.main-banner-slogan топ-менеджеров
+				.main-banner-text С 6 по 8 июня 2018 года в г. Иннополис состоится ежегодная конференция Цифровая Индустрия Промышленной России 2018.
+.section.section--gray
+	.main-cont
+		.section-title Новости клуба
+		.section-title-sub Компании Polymedia и Visiology приглашают Вас на Конференцию BI 4.0
+		.news
+			- for (var i=9;i<15;i++)
+				.news__el
+					.news__el-img-wrap
+						.news__el-img(style="background-image:url('img/img-"+i +".jpg')")
+					.news__el-content
+						.news__el-title Чистая прибыль «Яндекса» выросла на сотни процентов
+						.news__el-date 10.12.2018
+						.news__el-text Драйверами роста квартальной прибыли и выручки «Яндекса» стали сервисы такси и объявлений, «Яндекс.Облако» и экспериментальные направления. Выручка от продажи интернет-рекламы в структуре общей выручки компании составляет 80%.
+
+.section
+	.main-cont
+		.section-title Ближайшие мероприятия
+		.section-title-sub Компании Polymedia и Visiology приглашают Вас на Конференцию BI 4.0
+		.slider-wrap
+			.slider-control.slider-control--left
+				+icon("arrow-left","icon")
+			.slider-control.slider-control--right
+				+icon("arrow-right","icon")
+			.perfomace.slider-item
+				- for (var i=0;i<4;i++)
+					.perfomace__el
+						.perfomace__el-cont
+							.perfomace__el-img-wrap
+								.perfomace__el-img(style="background-image:url('img/img-10.jpg')")
+							.perfomace__el-content
+								.perfomace__el-title Главное событие цифровой экономики
+								.perfomace__el-text Это актуальная межотраслевая площадка для глобального диалога представителей промышленности, профессионалов отрасли информационных технологий, телекома, оборонного комплекса, венчурных инвесторов и государства по вопросам
+								a(href="#").perfomace__el-get Подробнее
+
+.section.section--gray
+	.main-cont
+		.section-title Члены клуба
+		.section-title-sub Компании Polymedia и Visiology приглашают Вас на Конференцию BI 4.0
+		.partners
+			- for (var i=1;i<9;i++)
+				.partners__el
+					.partners__el-img(style="background-image:url('img/team-"+i +".jpg')")
+					.partners__el-name Александр Аполлонов
+					.partners__el-staf CEO&CIO
+
+.slogan(style="background-image:url('img/img-12.jpg')")
+	.filter
+	.slogan-content-wrap
+		.main-cont
+			.slogan-content
+				.slogan-title Мы профессионалы своего окружения
+				.slogan-text Лидеры рынка всегда ясно видят не только собственные цели, но и тенденции рынка представителей промышленности, профессионалов отрасли информационных технологий, телекома, оборонного комплекса
+				.slogan-get Вступить
+
+.section
+	.main-cont
+		.section-title Статьи
+		.section-title-sub Компании Polymedia и Visiology приглашают Вас на Конференцию BI 4.0
+		.articles
+			- for (var i=0;i<4;i++)
+				.articles__el
+					.articles__el-content
+						.articles__el-title
+							+icon("quote-left","icon")
+							span Как выглядят приоритеты российского рынка разработки сейчас? Как вы оцениваете уровень зрелости заказчиков?
+						.articles__el-text Драйверами роста квартальной прибыли и выручки «Яндекса» стали сервисы такси и объявлений, «Яндекс.Облако» и экспериментальные направления. Выручка от продажи интернет-рекламы в структуре общей выручки компании составляет 80%.р Аполлонов
+						.articles__el-date 10.12.2018
+
+.footer
+	.main-cont
+		.footer-wrap
+			.footer-logo
+				img(src="img/logo-3.svg", alt="")
+			.footer-menu
+				- var items = ['Новости','Мероприятия','Лица ИТ','Общение','Проекты','О клубе'];
+					each item in items
+						a(href="#").footer-menu__el #{item}
+.footer-bottom © 2002–2018 все права защищены
+
+include ./block_html/_script.pug

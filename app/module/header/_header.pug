@@ -1,0 +1,26 @@
+mixin header()
+	//block header
+	.header
+		.header-layer
+			.main-cont
+				.header-wrap
+					a(href="#").header-logo
+						img(src="img/logo-3.svg", alt="")
+					.header-nav
+						- var items = ['Новости','Мероприятия','Лица ИТ','Общение','Проекты','О клубе'];
+						each item in items
+							.header-nav__el
+								.header-nav__el-link-wrap
+									a(href="#").header-nav__el-link #{item}
+									.header-nav__el-icon
+										+icon("arrow-down","icon-el")
+								.header-nav__sub
+									.coner-wrap
+										.window-coner-top
+										.header-nav__sub-wrap
+											a(href="#").header-nav__sub-el О компании
+											a(href="#").header-nav__sub-el Контакты
+											a(href="#").header-nav__sub-el Карьера
+					.menu-toggle
+						+icon("menu","icon-el")
+	//block header end
