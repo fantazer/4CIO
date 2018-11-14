@@ -1,4 +1,46 @@
 mixin footer()
+	//events
+	.section
+		.main-cont
+			.section-title Ближайшие мероприятия
+			.section-title-sub Компании Polymedia и Visiology приглашают Вас на Конференцию BI 4.0
+			.slider-wrap
+				.slider-control.slider-control--left
+					+icon("arrow-left","icon")
+				.slider-control.slider-control--right
+					+icon("arrow-right","icon")
+				.perfomace.slider-item
+					- for (var i=0;i<4;i++)
+					.perfomace__el
+						.perfomace__el-cont
+							.perfomace__el-img-wrap
+								.perfomace__el-img(style="background-image:url('img/img-10.jpg')")
+							.perfomace__el-content
+								.perfomace__el-title Главное событие цифровой экономики
+								.perfomace__el-text Это актуальная межотраслевая площадка для глобального диалога представителей промышленности, профессионалов отрасли информационных технологий, телекома, оборонного комплекса, венчурных инвесторов и государства по вопросам
+								a(href="#").perfomace__el-get Подробнее
+
+	//slogan
+	.slogan(style="background-image:url('img/img-12.jpg')")
+		.filter
+		.slogan-content-wrap
+			.main-cont
+				.slogan-content
+					.slogan-title Мы профессионалы своего окружения
+					.slogan-text Лидеры рынка всегда ясно видят не только собственные цели, но и тенденции рынка представителей промышленности, профессионалов отрасли информационных технологий, телекома, оборонного комплекса
+					div(data-modal="order").modal-get.slogan-get Вступить
+
+	//footer
+	.footer
+		.main-cont
+			.footer-wrap
+				.footer-logo
+					img(src="img/logo-3.svg", alt="")
+				.footer-menu
+					- var items = ['Новости','Мероприятия','Лица ИТ','Общение','Проекты','О клубе'];
+						each item in items
+							a(href="#").footer-menu__el #{item}
+	.footer-bottom © 2002–2018 все права защищены
 	//block footer
 	.modal-layer
 		.modal-filter
@@ -8,7 +50,7 @@ mixin footer()
 					.modal-close
 						+icon("close","icon")
 					.modal-title Оставьте заявку
-					.modal-text Обращаетесь к нам впервые? <br> Оформите обращение с помощью этой формы, мы перезвоним Вам и проконсультируем по любому Вашему вопросу совершенно бесплатно!
+					.modal-text Мы с радостью ответим на все Ваши вопросы. Вступайте в наш клуб !
 					form.validate-form( action="javascript:void(null);")
 						.input-row
 							input(type="text" name="name" placeholder="Ваше имя").input
@@ -16,20 +58,11 @@ mixin footer()
 							input(type="text" name="phone" placeholder="Ваш телефон").input
 						.input-row
 							textarea(name="info", cols="30", rows="5" placeholder="Сообщение").input
-						.agree-row
-							.check-el
-								label.style-label.style-label--checkbox
-									input(type="checkbox" name="agree").sytle-input
-									.sytle-input-element
-										+icon("checked","icon-check")
-									.sytle-input-text=text
-							.agree-row__text Согласен с
-								a(href="#") условиями обработки персональных данных
 						input(type="submit" value="Отправить заявку").modal-send
 			//success message
 			.modal(data-modal="truemessage")
 				.modal-content.modal-content--true
 					+icon("interface","icon")
 					.modal-text-true Ваша заявка принята
-	a(href="#" data-modal="order").modal-get Открыть модальное окно
+
 	//block footer end

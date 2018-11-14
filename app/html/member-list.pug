@@ -1,0 +1,19 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
++header()
+
+.section.section--gray
+	.main-cont
+		.section-title Члены клуба
+		.section-title-sub Компании Polymedia и Visiology приглашают Вас на Конференцию BI 4.0
+		.partners
+			- for (var i=1;i<9;i++)
+				a(href="member-item.html").partners__el
+					.partners__el-img(style="background-image:url('img/team-"+i +".jpg')")
+					.partners__el-name Александр Аполлонов
+					.partners__el-staf CEO&CIO
+
++footer()
+
+include ./block_html/_script.pug

@@ -1,0 +1,22 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
++header()
+
+.section-sm
+	.main-cont
+		.section-title Новости клуба
+		.section-title-sub Компании Polymedia и Visiology приглашают Вас на Конференцию BI 4.0
+		.news
+			- for (var i=9;i<15;i++)
+				a(href="news-item.html").news__el
+					.news__el-img-wrap
+						.news__el-img(style="background-image:url('img/img-" + i + ".jpg')")
+					.news__el-content
+						.news__el-date 10.12.2018
+						.news__el-title Чистая прибыль «Яндекса» выросла на сотни процентов
+						.news__el-text Драйверами роста квартальной прибыли и выручки «Яндекса» стали сервисы такси и объявлений, «Яндекс.Облако» и экспериментальные направления. Выручка от продажи интернет-рекламы в структуре общей выручки компании составляет 80%.
+
++footer()
+
+include ./block_html/_script.pug

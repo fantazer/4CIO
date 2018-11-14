@@ -19,6 +19,8 @@ body
 .main-cont
 	center(1200px,10px)
 
+.main-cont--sm
+	center(800px,10px)
 
 //modal
 .modal-layer
@@ -47,7 +49,7 @@ body
 	position: absolute
 	top: 0
 	left: 0
-	background: #18191d
+	background: #18191da1
 	width: 100%
 	height: 100vh
 	min-height 100vh
@@ -103,7 +105,7 @@ body
 		+below(768px)
 			size 15px
 		size 20px
-		fill white
+		fill black
 
 .modal-open
 	overflow: hidden
@@ -124,11 +126,11 @@ body
 .modal-title
 	+below(768px)
 		font-size: 20px
-	@extend .type--md
+	@extend .type--lg
 	letter-spacing 1.2px
 	text-align: center
 	up()
-	margin-bottom: 30px
+	margin-bottom: 10px
 
 .modal-text
 	+below(768px)
@@ -143,13 +145,18 @@ body
 .modal-agree
 	margin-top: 30px
 	margin-bottom: 40px
+
+.modal-send
+	@extend .btn--mark
+	@extend .btn--md
+	width: 100%
 //modal===end
 
 
 
 .header
 	width: 100%
-
+	border-bottom 1px solid whitesmoke
 .header-logo
 	+below(1024px)
 		width: 100px
@@ -317,16 +324,15 @@ body
 	opacity:.8
 	line-height: 1.6
 .section
-	padding: 100px
+	padding: 100px 0
+.section-sm
+	padding: 50px 0
 .section--gray
 	background: #fbfdff
 .section-title
+	@extend .type--xl
 	margin-bottom: 20px
-	font-size: 38px
-	font-weight: 700
 	text-align: center
-	color black
-	font-family: Gotham
 
 .section-title-sub
 	text-align: center
@@ -335,11 +341,17 @@ body
 	display: grid
 	grid-gap 20px
 	grid-template-columns 1fr 1fr 1fr;
+.news--two-el
+	grid-template-columns 1fr 1fr
 
 .news__el
 	br(10px)
 	overflow: hidden
 	box-shadow: 0 10px 30px 0 rgba(50, 50, 50, 0.08);
+	tr(all)
+	&:hover
+		box-shadow: 0 10px 50px 0 rgba(50, 50, 50, 0.28);
+
 
 .news__el-content
 	padding: 30px 30px 50px 30px
@@ -351,11 +363,13 @@ body
 .news__el-title
 	font-size: 18px
 	font-weight: 700
-	margin-bottom: 10px
 	color black
+	font-family: Gotham
+	line-height: 1.6
+	margin-bottom: 20px
 .news__el-date
 	opacity: .8
-	margin-bottom: 30px
+	margin-bottom: 15px
 	font-size: 14px
 .news__el-text
 	line-height: 1.6
@@ -382,10 +396,6 @@ body
 	z-index 10
 	margin-top: -20px
 	cp()
-	&:hover
-		background: $red
-		.icon
-			fill white
 	.icon
 		size 14px
 
@@ -407,22 +417,22 @@ body
 	padding: 40% 10%
 .perfomace__el-content
 	width: 50%
-	padding: 30px
+	padding: 30px 60px
 	background: white
 	f()
 	fl()
 	justify-content: center
 	align-items: flex-start
 .perfomace__el-title
-	font-size: 32px
-	font-weight: bold
+	@extend .type--lg
 	color black
-	font-family: 'Gotham'
 	line-height: 1.2
 	margin-bottom: 30px
+
 .perfomace__el-text
 	line-height: 1.6
 	margin-bottom: 40px
+
 .perfomace__el-get
 	@extend .btn--md
 	@extend .btn--mark
@@ -462,8 +472,9 @@ body
 .slogan
 	position: relative
 	bg-full()
-	padding: 20% 10%
+	padding: 15% 10%
 	background-attachment: fixed
+	min-height 500px
 	.filter
 		filter()
 		background: #00000073
@@ -481,11 +492,10 @@ body
 	height: 100%
 
 .slogan-title
+	@extend .type--xxl
 	color white
-	font-size: 48px
-	font-weight: 700
 	text-align: center
-	width: 80%
+	width: 70%
 	margin-bottom: 20px
 .slogan-text
 	text-align: center
@@ -507,25 +517,28 @@ body
 	br(10px)
 	overflow: hidden
 	box-shadow: 0 10px 30px 0 rgba(50, 50, 50, 0.08);
+	tr(all)
+	&:hover
+		box-shadow: 0 10px 50px 0 rgba(50, 50, 50, 0.28);
 
 .articles__el-content
-	padding: 30px 30px 50px 30px
+	padding: 40px 40px 50px 40px
 
 .articles__el-img
 	bg-full()
 	padding: 35% 10%
 
 .articles__el-title
-	font-size: 18px
+	@extend .type--md
 	font-weight: 700
-	margin-bottom: 30px
+	margin-bottom: 20px
 	color black
-	f()
 	.icon
-		size 30px
+		display: block
+		size 20px
 		fill $mark
 		margin-right: 10px
-
+		margin-bottom: 20px
 .articles__el-date
 	opacity: .8
 	font-size: 14px
@@ -551,7 +564,79 @@ body
 	up()
 .footer-bottom
 	width: 100%
-	padding: 10px 0
+	padding: 20px 0
 	text-align: center
-	background: $mark
-	color white
+	background: $gray
+
+.category-wrap
+	padding: 40px 0
+	background: $gray
+	margin-bottom: 40px
+.category__title
+	margin: 0
+	padding: 0
+
+.item-title
+	@extend .type--xxl
+	margin-bottom: 20px
+	text-align: center
+.bread
+	flex(mid)
+	margin-bottom: 20px
+.bread__el
+	position: relative
+	margin-right: 30px
+	opacity:.6
+	color #757575
+	&:after
+		content '-'
+		position: absolute
+		right: -18px
+
+	&:last-child
+		&:after
+			content ''
+			display: none
+		margin-right: 0
+
+
+.item-date
+	opacity: .8
+	margin-bottom: 30px
+	font-size: 14px
+	text-align: center
+.item-text
+	line-height: 1.6
+	font-size: 18px
+	padding-bottom: 100px
+.item-img
+	margin: 30px 0
+
+.member
+	f()
+	justify-content: space-between
+.member-img
+	width: 30%
+.member-content
+	width: 65%
+.member-title
+	@extend .type--xl
+	margin-bottom: 20px
+.member-row
+	f()
+	margin-bottom: 10px
+.member-row__title
+	margin-right: 20px
+	font-weight: 700
+	color black
+//.member-val
+.member-text
+	margin-top: 50px
+	line-height: 1.6
+	font-size: 16px
+
+.input-row
+	.input
+		width: 100%
+		margin-bottom: 20px
+

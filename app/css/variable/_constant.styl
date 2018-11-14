@@ -24,7 +24,7 @@ dark-red = #ad0c14
 red = #cd0b15
 light-red = #ef2b35
 $mark = #ad0c14
-
+$gray = #f0f0f0
 
 $main-text-color = black
 $link-color = black
@@ -56,13 +56,25 @@ typeSize(fontSm,font)
 	typeSize(15,13)
 
 .type--md
-	typeSize(20,16)
+	typeSize(18,16)
 
 .type--lg
 	typeSize(24,18)
+	font-family: 'Gotham'
+	font-weight:700
+	color black
 
 .type--xl
-	typeSize(50,24)
+	typeSize(38,24)
+	font-family: 'Gotham'
+	font-weight:700
+	color black
+
+.type--xxl
+	typeSize(48,28)
+	font-family: 'Gotham'
+	font-weight:700
+	color black
 
 .type--bold
 	font-weight bold
@@ -176,10 +188,10 @@ btnStyleLight(br-btn,color-btn)
 	.nav-icon
 		fill white
 	&:hover
-		color #000000
+		color white!important
 		background: $mark
 	&:active
-		color #000000
+		color white!important
 	input[type="submit"]
 		border 0
 	.nav-icon
